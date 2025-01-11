@@ -24,9 +24,9 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`${
-        navBorder ? 'border-b border-cyan-900' : ''
-      } w-full sticky top-0 z-10 bg-black py-5`}
+      className={`${openMenu ? 'border-b' : ''} ${
+        navBorder ? 'border-b ' : ''
+      }  w-full sticky top-0 z-10 bg-black py-5 border-cyan-900`}
     >
       {/* container */}
       <div className="max-w-[1300px] px-2 mx-auto flex justify-between items-center">
