@@ -9,11 +9,11 @@ export default function HomePage() {
   return (
     <div>
       <HeroSection />
-      <FindExerciseSection />
       <FeaturedSection />
       <BenefitsSection />
       <HowItWorkSection />
       <CategoriesSection />
+      <FindExerciseSection />
     </div>
   );
 }

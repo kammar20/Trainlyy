@@ -10,7 +10,7 @@ export default function CategoriesSection() {
   }
 
   return (
-    <section className="py-20 px-2">
+    <section className="py-20 px-2 bg-neutral-50">
       <main className="max-w-[1300px] mx-auto">
         <h2 className="text-neutral-900 text-center text-2xl font-medium lg:font-semibold lg:text-4xl mb-3">
           Exercise Categories

@@ -10,6 +10,8 @@ import {
   Clock,
   Crown,
   Gem,
+  Mail,
+  Phone,
   Search,
   Shield,
   SlidersVertical,
@@ -19,6 +21,7 @@ import {
   TvMinimalPlay,
   Zap,
 } from 'lucide-react';
+import { FaFacebookF, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 export const bodyPartEg = [
   'All Exercise',
@@ -171,5 +174,40 @@ export const ExerciseCategoriesData = [
     color: 'orange',
     bodyPartName: 'Lower Arms',
     desc: 'Strengthen forearms and wrists for improved grip and stability.',
+  },
+];
+
+export const FooterSocial = [
+  { id: 1, iconType: <FaFacebookF /> },
+  { id: 2, iconType: <FaTwitter /> },
+  { id: 3, iconType: <FaInstagram /> },
+];
+
+export const FooterQuickLinks = [
+  'Home',
+  'Search Exercises',
+  'Categories',
+  'How It Works',
+  'Benefits',
+];
+
+export const FooterSupport = [
+  'Help Center',
+  'Privacy Policy',
+  'Terms of Service',
+  'Contact Us',
+  'FAQ',
+];
+
+export const FooterContact = [
+  {
+    id: 1,
+    icon: <Mail size={16} />,
+    text: 'support@trainlyy.com',
+  },
+  {
+    id: 2,
+    icon: <Phone size={16} />,
+    text: '+1 (555) 123-4567',
   },
 ];

@@ -2,7 +2,7 @@ import { FeaturedExercisesData } from '../data/ExerciseData';
 
 export default function FeaturedSection() {
   return (
-    <section className="bg-neutral-200 py-20 px-2">
+    <section className="bg-neutral-100 py-20 px-2">
       <main className="max-w-[1300px] mx-auto">
         <h2 className="text-neutral-900 text-center text-2xl font-medium lg:font-semibold lg:text-4xl mb-3">
           Featured Exercises
@@ -28,8 +28,12 @@ export default function FeaturedSection() {
                 <h3 className="text-neutral-900 text-lg lg:text-xl font-medium mb-2">
                   {data.ExerciseName}
                 </h3>
-                <p className=" text-sm lg:text-base text-neutral-700 mb-2">
-                  Target :
+                <p className="text-sm lg:text-base text-neutral-700 mb-2">
+                  <span className="text-neutral-800 font-semibold">
+                    {' '}
+                    Target{' '}
+                  </span>{' '}
+                  :
                   {data.TargetMuscle.map((muscle, i) => (
                     <span key={i}> {muscle} </span>
                   ))}

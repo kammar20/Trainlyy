@@ -9,7 +9,7 @@ export default function RootLayout() {
       <div>
         <Outlet />
       </div>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
