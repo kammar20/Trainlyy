@@ -7,6 +7,7 @@ import RootLayout from './layout/RootLayout';
 import HomePage from './pages/HomePage';
 import ExerciseDetailPage from './pages/ExerciseDetailPage';
 import Error404Page from './pages/Error404Page';
+import { ExerciseProvider } from './context/ExerciseContext';
 
 export default function App() {
   const myRouter = createBrowserRouter([
@@ -19,7 +20,7 @@ export default function App() {
           element: <HomePage />,
         },
         {
-          path: '/exercise',
+          path: 'exerciseDetails/:id',
           element: <ExerciseDetailPage />,
         },
       ],
@@ -30,5 +31,9 @@ export default function App() {
     },
   ]);
 
-  return <RouterProvider router={myRouter} />;
+  return (
+    <ExerciseProvider>
+      <RouterProvider router={myRouter} />
+    </ExerciseProvider>
+  );
 }

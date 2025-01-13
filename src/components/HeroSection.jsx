@@ -1,3 +1,4 @@
+import { Link } from 'react-scroll';
 import heroImg from '../assets/heroImg3.jpg';
 export default function HeroSection() {
   return (
@@ -14,12 +15,15 @@ export default function HeroSection() {
             for your fitness goals. Personalized routines for every fitness
             level.
           </p>
-          <a
-            href="#"
+          <Link
+            to="findExercise"
+            smooth={true}
+            duration={700}
+            offset={-60}
             className="inline-block bg-blue-600 active:bg-blue-800 transition-all text-white text-lg px-5 py-2 rounded-lg cursor-pointer"
           >
             Start Searching
-          </a>
+          </Link>
         </div>
 
         {/* img */}

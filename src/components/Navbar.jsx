@@ -1,5 +1,6 @@
 import { Menu, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-scroll';
 
 export default function Navbar() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -10,7 +11,7 @@ export default function Navbar() {
   }
 
   function handleScroll() {
-    if (window.scrollY >= 20) {
+    if (window.scrollY >= 30) {
       setNavBorder(true);
     } else {
       setNavBorder(false);
@@ -28,43 +29,61 @@ export default function Navbar() {
         navBorder ? 'border-b ' : ''
       }  w-full sticky top-0 z-10 bg-black py-5 border-cyan-900`}
     >
-      {/* container */}
+      {/* Big Screen */}
       <div className="max-w-[1300px] px-2 mx-auto flex justify-between items-center">
-        <h1 className="font-kaushan text-neutral-50 text-2xl md:text-3xl">
+        <Link
+          to="hero"
+          smooth={true}
+          offset={-100}
+          duration={700}
+          className="font-kaushan text-neutral-50 cursor-pointer text-2xl md:text-3xl"
+        >
           Trainlyy
-        </h1>
+        </Link>
         <ul className="hidden  md:flex gap-10">
           <li>
-            <a
-              href="#"
-              className="text-neutral-300 hover:text-neutral-100 text-lg transition-all"
+            <Link
+              to="hero"
+              smooth={true}
+              offset={-100}
+              duration={700}
+              className="text-neutral-300 hover:text-neutral-100 text-lg transition-all cursor-pointer"
             >
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
-              className="text-neutral-300 hover:text-neutral-100 text-lg transition-all"
+            <Link
+              to="findExercise"
+              smooth={true}
+              offset={-60}
+              duration={700}
+              className="text-neutral-300 hover:text-neutral-100 text-lg transition-all cursor-pointer"
             >
               Search
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
-              className="text-neutral-300 hover:text-neutral-100 text-lg transition-all"
+            <Link
+              to="categories"
+              smooth={true}
+              offset={-50}
+              duration={700}
+              className="text-neutral-300 hover:text-neutral-100 text-lg transition-all cursor-pointer"
             >
               Categories
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
-              className="text-neutral-300 hover:text-neutral-100 text-lg transition-all"
+            <Link
+              to="howItWorks"
+              smooth={true}
+              offset={-50}
+              duration={700}
+              className="text-neutral-300 hover:text-neutral-100 text-lg transition-all cursor-pointer"
             >
-              Benefits
-            </a>
+              How it works
+            </Link>
           </li>
         </ul>
         <div className="md:hidden cursor-pointer" onClick={handleClick}>
@@ -80,36 +99,52 @@ export default function Navbar() {
       {openMenu && (
         <ul className="md:hidden flex flex-col gap-5 pt-5 px-1 ">
           <li>
-            <a
-              href="#"
-              className="text-neutral-300 hover:text-neutral-100 transition-all"
+            <Link
+              to="hero"
+              smooth={true}
+              offset={-300}
+              duration={700}
+              onClick={handleClick} // Close the menu on click
+              className="text-neutral-300 hover:text-neutral-100 transition-all cursor-pointer"
             >
               Home
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
-              className="text-neutral-300 hover:text-neutral-100 transition-all"
+            <Link
+              to="findExercise"
+              smooth={true}
+              offset={-230}
+              duration={700}
+              onClick={handleClick}
+              className="text-neutral-300 hover:text-neutral-100 transition-all cursor-pointer"
             >
               Search
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
-              className="text-neutral-300 hover:text-neutral-100 transition-all"
+            <Link
+              to="categories"
+              smooth={true}
+              offset={-220}
+              duration={700}
+              onClick={handleClick}
+              className="text-neutral-300 hover:text-neutral-100 transition-all cursor-pointer"
             >
               Categories
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#"
-              className="text-neutral-300 hover:text-neutral-100 transition-all"
+            <Link
+              to="howItWorks"
+              smooth={true}
+              offset={-220}
+              duration={700}
+              onClick={handleClick}
+              className="text-neutral-300 hover:text-neutral-100 transition-all cursor-pointer"
             >
-              Benefits
-            </a>
+              How it works
+            </Link>
           </li>
         </ul>
       )}

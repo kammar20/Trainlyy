@@ -9,8 +9,10 @@ export default function FindExerciseSection() {
         </h2>
 
         <p className="text-neutral-700 text-center mb-8 lg:text-lg  mx-auto">
-          Search from our extensive database of exercises by name, target
-          muscle, or equipment
+          Search from our extensive database of exercises by{' '}
+          <span className="text-blue-600 font-medium">name</span>,
+          <span className="text-blue-600 font-medium"> target muscle</span> or{' '}
+          <span className="text-blue-600 font-medium">equipment.</span>
         </p>
 
         {/* Search Box */}
