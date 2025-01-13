@@ -26,7 +26,7 @@ export default function Pagination({ sectionRef }) {
   }
 
   return (
-    <div className="flex justify-center gap-5">
+    <div className="flex justify-center items-center gap-5">
       {/* <button
         disabled={currentPage === 1}
         onClick={() => handlePageChange(1)}
@@ -40,7 +40,7 @@ export default function Pagination({ sectionRef }) {
         onClick={() => handlePageChange(currentPage - 1)}
         className={`${
           currentPage === 1 ? 'cursor-not-allowed' : 'cursor-pointer'
-        } border px-3 py-2 active:bg-blue-500 transition-all`}
+        } border-2  px-3 py-1 active:bg-blue-600 transition-all`}
       >
         Prev
       </button>
@@ -48,7 +48,7 @@ export default function Pagination({ sectionRef }) {
       {pages.map((page) => (
         <button
           key={page}
-          className={`border-2 px-3 py-2 ${
+          className={`border-2 px-3 py-1 ${
             page === currentPage ? 'bg-blue-500' : ''
           }`}
           onClick={() => handlePageChange(page)}
@@ -62,7 +62,7 @@ export default function Pagination({ sectionRef }) {
         onClick={() => handlePageChange(currentPage + 1)}
         className={`${
           currentPage === totalPages ? 'cursor-not-allowed' : 'cursor-pointer'
-        } border px-3 py-2 active:bg-blue-500 transition-all`}
+        } border-2 px-3 py-1 active:bg-blue-500 transition-all`}
       >
         Next
       </button>

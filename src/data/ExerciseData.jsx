@@ -184,11 +184,46 @@ export const FooterSocial = [
 ];
 
 export const FooterQuickLinks = [
-  'Home',
-  'Search Exercises',
-  'Categories',
-  'How It Works',
-  'Benefits',
+  {
+    id: 1,
+    name: 'Home',
+    to: 'hero',
+    smooth: true,
+    offset: -100,
+    duration: 700,
+  },
+  {
+    id: 2,
+    name: 'Search Exercises',
+    to: 'findExercise',
+    smooth: true,
+    offset: -60,
+    duration: 700,
+  },
+  {
+    id: 3,
+    name: 'Categories',
+    to: 'categories',
+    smooth: true,
+    offset: -50,
+    duration: 700,
+  },
+  {
+    id: 4,
+    name: 'How It Works',
+    to: 'howItWorks',
+    smooth: true,
+    offset: -50,
+    duration: 700,
+  },
+  {
+    id: 5,
+    name: 'Benefits',
+    to: 'benefits',
+    smooth: true,
+    offset: -60,
+    duration: 700,
+  },
 ];
 
 export const FooterSupport = [

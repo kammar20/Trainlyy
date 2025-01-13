@@ -9,6 +9,7 @@ export default function DisplayExerciseSection() {
 
   const navigate = useNavigate();
 
+  // navigate to exercise details page
   const handleNavigate = (id) => {
     // Save the current scroll position (so when back to this page it show this section)
     sessionStorage.setItem('scrollPosition', window.scrollY);
@@ -46,7 +47,7 @@ export default function DisplayExerciseSection() {
         {currentPageExercise?.length > 0 && (
           <div>
             <h2 className="text-neutral-900 text-lg md:text-2xl font-medium lg:font-semibold lg:text-4xl mb-10">
-              Showing Results
+              All Exercises
             </h2>
 
             {/* card container */}
@@ -61,7 +62,7 @@ export default function DisplayExerciseSection() {
                 >
                   <img src={data.gifUrl} alt="" className="w-full" />
 
-                  <h3 className="p-2 text-lg font-medium text-blue-600">
+                  <h3 className="px-3 py-2 text-lg font-medium text-blue-600">
                     {data.name}
                   </h3>
                 </div>

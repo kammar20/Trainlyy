@@ -1,5 +1,5 @@
 import { Link } from 'react-scroll';
-import heroImg from '../assets/heroImg3.jpg';
+import heroImg from '../assets/heroImg.jpg';
 export default function HeroSection() {
   return (
     <section className="bg-black py-5 px-2">

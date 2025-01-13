@@ -6,6 +6,8 @@ import FeaturedSection from '../components/FeaturedSection';
 import FindExerciseSection from '../components/FindExerciseSection';
 import HeroSection from '../components/HeroSection';
 import HowItWorkSection from '../components/HowItWorkSection';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 export default function HomePage() {
   // check if any save scroll position, so when user come from different page it scroll to saved position
@@ -22,11 +24,14 @@ export default function HomePage() {
 
   return (
     <div>
+      <Navbar />
       <div id="hero">
         <HeroSection />
       </div>
       <FeaturedSection />
-      <BenefitsSection />
+      <div id="benefits">
+        <BenefitsSection />
+      </div>
       <div id="howItWorks">
         <HowItWorkSection />
       </div>
@@ -36,7 +41,9 @@ export default function HomePage() {
       <div id="findExercise">
         <FindExerciseSection />
       </div>
+      {/* Display Preloaded Exercise */}
       <DisplayExerciseSection />
+      <Footer />
     </div>
   );
 }

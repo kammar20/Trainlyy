@@ -36,7 +36,6 @@ export const ExerciseProvider = ({ children }) => {
           exerciseOptions
         );
 
-        console.log(data);
         setAllExercise(data);
       } catch (error) {
         setIsError(
@@ -49,7 +48,7 @@ export const ExerciseProvider = ({ children }) => {
     fetchAllExercise();
   }, []);
 
-  // Compute the exercises for the current page
+  // Compute all the exercises for the current page
   useEffect(() => {
     if (allExercise) {
       const lastExerciseIndex = currentPage * exerciesPerPage;

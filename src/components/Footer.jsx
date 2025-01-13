@@ -1,3 +1,4 @@
+import { Link as ScrollLink } from 'react-scroll';
 import {
   FooterContact,
   FooterQuickLinks,
@@ -14,10 +15,16 @@ export default function Footer() {
         <div className="flex flex-col pb-7 md:flex-row md:flex-wrap md:justify-between">
           {/*  */}
           <div className="s-1 mb-10 lg:w-[50%]">
-            <h1 className="font-kaushan text-3xl text-neutral-50 mb-5">
+            <ScrollLink
+              to={'hero'}
+              smooth={true}
+              offset={-100}
+              duration={700}
+              className="font-kaushan text-3xl text-neutral-50 cursor-pointer"
+            >
               Trainlyy
-            </h1>
-            <p className="text-sm text-neutral-400 mb-5 w-full md:w-[60%]">
+            </ScrollLink>
+            <p className="text-sm text-neutral-400 mt-5 mb-5 w-full md:w-[60%]">
               Your ultimate destination for discovering and learning exercises
               that match your fitness goals.
             </p>
@@ -37,11 +44,18 @@ export default function Footer() {
           {/* Quick Links */}
           <div className="mb-8">
             <h2 className="mb-3 text-neutral-50">Quick Links</h2>
-            <ul>
-              {FooterQuickLinks.map((productText, i) => (
-                <li className="mb-2 text-neutral-400 text-sm" key={i}>
-                  {productText}
-                </li>
+            <ul className="flex flex-col">
+              {FooterQuickLinks.map((quickLink) => (
+                <ScrollLink
+                  key={quickLink.id}
+                  to={quickLink.to}
+                  smooth={quickLink.smooth}
+                  offset={quickLink.offset}
+                  duration={quickLink.duration}
+                  className="mb-2 text-neutral-400 text-sm cursor-pointer"
+                >
+                  {quickLink.name}
+                </ScrollLink>
               ))}
             </ul>
           </div>
@@ -50,9 +64,9 @@ export default function Footer() {
           <div className="mb-8">
             <h2 className="mb-3 text-neutral-50">Support</h2>
             <ul>
-              {FooterSupport.map((serviceText, i) => (
+              {FooterSupport.map((support, i) => (
                 <li className="mb-2 text-neutral-400 text-sm" key={i}>
-                  {serviceText}
+                  {support}
                 </li>
               ))}
             </ul>

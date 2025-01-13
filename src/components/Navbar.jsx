@@ -21,6 +21,7 @@ export default function Navbar() {
   // Adding event listener for scroll
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (

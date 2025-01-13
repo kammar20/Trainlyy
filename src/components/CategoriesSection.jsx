@@ -5,8 +5,13 @@ import { ChevronRight } from 'lucide-react';
 export default function CategoriesSection() {
   const [showMore, setShowMore] = useState(false);
 
+  // to show less, scroll screen back to top
   function handleClick() {
     setShowMore(!showMore);
+    if (showMore) {
+      const section = document.getElementById('categories');
+      section.scrollIntoView();
+    }
   }
 
   return (
