@@ -1,11 +1,19 @@
 import { useExercise } from '../context/ExerciseContext';
 import Pagination from './Pagination';
 import { useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function DisplayExerciseSection() {
   const { isLoading, isError, currentPageExercise } = useExercise();
   const sectionRef = useRef(null);
+
+  const navigate = useNavigate();
+
+  const handleNavigate = (id) => {
+    // Save the current scroll position (so when back to this page it show this section)
+    sessionStorage.setItem('scrollPosition', window.scrollY);
+    navigate(`/exerciseDetails/${id}`);
+  };
 
   return (
     <section ref={sectionRef} className="py-10 px-2">
@@ -45,8 +53,9 @@ export default function DisplayExerciseSection() {
             <div className="flex flex-col gap-5 md:flex-row md:flex-wrap md:justify-center">
               {currentPageExercise.map((data) => (
                 // single Card
-                <Link
-                  to={`exerciseDetails/${data.id}`}
+                <div
+                  onClick={() => handleNavigate(data.id)}
+                  // to={`exerciseDetails/${data.id}`}
                   key={data.id}
                   className="bg-white w-[100%] mx-auto md:w-[30%] xl:w-[20%] rounded-xl border-t-4 border-blue-600 transition-transform transform hover:scale-105 hover:shadow-lg mb-4"
                 >
@@ -55,7 +64,7 @@ export default function DisplayExerciseSection() {
                   <h3 className="p-2 text-lg font-medium text-blue-600">
                     {data.name}
                   </h3>
-                </Link>
+                </div>
               ))}
             </div>
           </div>

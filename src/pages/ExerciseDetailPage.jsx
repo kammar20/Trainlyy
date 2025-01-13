@@ -15,6 +15,9 @@ export default function ExerciseDetailPage() {
   const { id } = useParams();
 
   useEffect(() => {
+    // when page load, it show top of the page
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
     const getExerciseDetails = async () => {
       const exerciseData = await fetchData(
         `https://exercisedb.p.rapidapi.com/exercises/exercise/${id}`,
